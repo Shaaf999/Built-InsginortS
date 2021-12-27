@@ -1,0 +1,25 @@
+#(lower, upper), (digit,odd, even)
+
+#method1
+print(*sorted(input(), key=lambda c: (c.isdigit() - c.islower(), c in '02468', c)), sep='')
+
+
+
+#method 2
+lower=''
+upper=''
+digit=''
+odd=''
+even=''
+s=sorted(input())
+for i in s:
+    if i.islower():
+        lower+=i    
+    elif i.isupper():
+        upper=upper+i
+    elif int(i)%2 !=0:
+        odd+=i
+    elif int(i)%2 ==0:
+        even+=i
+        
+print(lower+upper+odd+even)  
